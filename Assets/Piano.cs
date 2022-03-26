@@ -5,7 +5,7 @@ using UnityEngine;
 public class Piano : MonoBehaviour
 {
 
-    [Range(0,10)]
+    [Range(0,20)]
     public float volume;
 
 }
