@@ -4,7 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: 2cbd6f9649bd7cd4ca8e8e987c2bd1b0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 4eee49466bff7a24990450a3b25dfe96, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 22200e09afb4fd2429611afca0a17e97, type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: f2b98b2bd1f9347408e2ce3c730bc76e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: df3486f68e66df240adbf06b50810d99, type: 2}
