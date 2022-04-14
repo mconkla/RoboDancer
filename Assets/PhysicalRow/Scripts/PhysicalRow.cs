@@ -40,7 +40,7 @@ public class PhysicalRow : MonoBehaviour
     {
         var slot = Instantiate(rowSlotGameObject, this.transform);
         var xPos = (cubeSize * cubeNumber) + (offset * cubeNumber);
-        slot.transform.position = new Vector3(xPos,this.transform.position.y, 0);
+        slot.transform.position = new Vector3(xPos,this.transform.position.y, this.transform.position.z);
         var tempSlot = slot.GetComponent<RowSlot>();
         tempSlot.InitCube(cubeSize,rowType);
         rowSlotsActive.Add(tempSlot);

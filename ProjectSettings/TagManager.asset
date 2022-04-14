@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - hihat
+  - kick
   - snare
+  - clap
   layers:
   - Default
   - TransparentFX

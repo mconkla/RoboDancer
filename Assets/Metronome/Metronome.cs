@@ -45,7 +45,6 @@ public class Metronome : MonoBehaviour
     // Just an example OnTick here
     void OnTick() {
         OnPlayTickEvent?.Invoke();
-        //Debug.Log( "Tick" );
         // GetComponent<AudioSource>().Play();
     }
 
