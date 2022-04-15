@@ -61,6 +61,7 @@ public class PhysicalRow : MonoBehaviour
         cubeTemp.transform.position = spawnPos;
         var placeCubeTemp = cubeTemp.GetComponent<PlaceCube>();
         placeCubeTemp.tag = rowType.ToString();
+        placeCubeTemp.zForce = this.transform.position.z;
         placeCubesActive.Add(placeCubeTemp);
     }
 

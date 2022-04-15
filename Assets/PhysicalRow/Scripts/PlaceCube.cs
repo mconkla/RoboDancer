@@ -14,6 +14,8 @@ public class PlaceCube : XRGrabInteractable
     private XRRayInteractor[] _allXRayInteractor;
 
     private RowSlot _connectedRowSlot;
+
+    public float zForce = 0f;
     private void Awake()
     {
         base.Awake();
@@ -53,7 +55,7 @@ public class PlaceCube : XRGrabInteractable
             
             
             var posRight = tempXRayInteract.attachTransform.position;
-            posRight.z = 0;
+            posRight.z = zForce;
             tempXRayInteract.attachTransform.position = posRight;
         }
     }
