@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  _rowType: 0
+  _rowType: 2
   currentPlaceCube: {fileID: 0}
   kickClip: {fileID: 8300000, guid: f46e5b781c9180b4aa85984747eab847, type: 3}
   snareClip: {fileID: 8300000, guid: 802f353e08767664ab7e4b8fb7fa09b3, type: 3}

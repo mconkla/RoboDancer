@@ -11,9 +11,11 @@ public class PhysicalRow : MonoBehaviour
         kick,snare,clap,hihat
     }
     
+    public RowType rowType;
+    
     public GameObject rowSlotGameObject;
     public GameObject placeCubeGameObject;
-    public RowType rowType;
+    
     public List<PlaceCube> placeCubesActive;
     public List<RowSlot> rowSlotsActive;
     

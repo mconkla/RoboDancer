@@ -18,7 +18,9 @@ public class PlaceCube : XRGrabInteractable
     {
         base.Awake();
         _meshRenderer = GetComponent<MeshRenderer>();
+        
         _allXRayInteractor = FindObjectsOfType<XRRayInteractor>();
+        
         transform.localScale = new Vector3(size, size, size);
 
     }
@@ -59,13 +61,14 @@ public class PlaceCube : XRGrabInteractable
     protected override void OnSelectEntering(SelectEnterEventArgs args)
     {
         base.OnSelectEntering(args);
+        
+        
         var pos = transform.position;
         for (var i = 0; i < _allXRayInteractor.Length; i++)
         {
             var tempXRayInteract = _allXRayInteractor[i];
             if (tempXRayInteract.attachTransform == null) continue;
             tempXRayInteract.attachTransform.position = pos;
-            
         }
         
         Debug.Log("GRABBING OBJECT");
