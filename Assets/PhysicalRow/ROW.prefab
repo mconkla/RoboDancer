@@ -364,7 +364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.4182}
+  m_AnchoredPosition: {x: 7.41, y: 0.4182}
   m_SizeDelta: {x: 2.6589, y: 2.1704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4135844170288047889
@@ -779,7 +779,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4135844171314872079}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.37, z: -1.0185072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -800,14 +800,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24810ee8b025ce44baab896d86df2d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rowType: 0
   rowSlotGameObject: {fileID: 6438342881493309967, guid: d5ca5dcdd5e0f93498b21d037832f774, type: 3}
   placeCubeGameObject: {fileID: 7407933941261357454, guid: 5e7e21b0ab245c44999cf7951fe8d899, type: 3}
-  rowType: 0
   placeCubesActive: []
   rowSlotsActive: []
-  slotCount: 8
+  slotCount: 16
   cubeSize: 0.2
   offset: 0.2
+  placeCubeVariants:
+  - {fileID: 7383703320698455172, guid: 1e1eafce19e5dd345a8e91badc062bb4, type: 3}
+  - {fileID: 1360188398459243918, guid: 6036470fee8d537468c23c29093ecba4, type: 3}
+  - {fileID: 866616684947328695, guid: 5f77d090f98d4354ab5e28b9e3b7583e, type: 3}
+  - {fileID: 8718575366361095405, guid: be54856234e4b5b40a506783ed377388, type: 3}
+  - {fileID: 2123848306408523796, guid: d34a0f278b6471642ae2c8fbd47b502f, type: 3}
 --- !u!1001 &1605355853855667233
 PrefabInstance:
   m_ObjectHideFlags: 0

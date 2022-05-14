@@ -20,6 +20,7 @@ public class PlaceCube : XRGrabInteractable
     {
         base.Awake();
         _meshRenderer = GetComponent<MeshRenderer>();
+        defaultMaterial = _meshRenderer.material;
         
         _allXRayInteractor = FindObjectsOfType<XRRayInteractor>();
         

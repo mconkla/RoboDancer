@@ -26,6 +26,9 @@ public class PhysicalRow : MonoBehaviour
     private float cubeSize = 1.0f;
     [SerializeField]
     private float offset = 0.1f;
+    
+    
+    public GameObject[] placeCubeVariants;
 
     private void Awake()
     {
@@ -36,8 +39,20 @@ public class PhysicalRow : MonoBehaviour
         {
             SpawnSlot(i);
         }
+
+        GetPlaceCubeVariantByName();
     }
 
+    private void GetPlaceCubeVariantByName()
+    {
+        foreach (var placeCubeVariant in placeCubeVariants)
+        {
+            if (placeCubeVariant.name.ToLower().Contains(rowType.ToString().ToLower()))
+            {
+                placeCubeGameObject = placeCubeVariant;
+            }
+        }
+    }
     private void SpawnSlot(int cubeNumber)
     {
         var slot = Instantiate(rowSlotGameObject, this.transform);
