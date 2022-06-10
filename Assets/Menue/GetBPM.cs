@@ -14,6 +14,10 @@ public class GetBPM : MonoBehaviour
     [SerializeField] private Text valText;
 
     [SerializeField] private int maxAngle = 70;
+
+    private int _angleRound = 0;
+
+    private int _startValue = 50;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -23,11 +27,17 @@ public class GetBPM : MonoBehaviour
         angle = this.transform.rotation.z * Mathf.Rad2Deg - 39 ;
         
         angle = angle < 0 ? angle * -1 : angle;
-        int angleRound = (int)angle;
+        _angleRound = (int)angle;
         
-        fill.fillAmount = ((float)angleRound/ maxAngle) + 0.014f;
-        valText.text = angleRound.ToString(CultureInfo.InvariantCulture);
-        
+        fill.fillAmount = ((float)_angleRound/ maxAngle) + 0.014f;
+        valText.text = (_angleRound + _startValue).ToString(CultureInfo.InvariantCulture);
+        Metronome.instance.bpm = _angleRound + _startValue;
+        Metronome.instance.bpmDisplay.text = (_angleRound + _startValue).ToString();
+    }
+
+    private void Exit()
+    {
+        Metronome.instance.bpm = _angleRound != 0? _angleRound: Metronome.instance.bpm;
     }
 }
 
