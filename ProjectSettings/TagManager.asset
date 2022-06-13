@@ -8,6 +8,8 @@ TagManager:
   - kick
   - snare
   - clap
+  - Snare
+  - floor
   layers:
   - Default
   - TransparentFX

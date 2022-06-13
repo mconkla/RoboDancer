@@ -30,6 +30,8 @@ public class PhysicalRow : MonoBehaviour
     
     public GameObject[] placeCubeVariants;
 
+    public SpawnCube spawnCube;
+
     private void Awake()
     {
         placeCubesActive = new List<PlaceCube>();
@@ -52,18 +54,36 @@ public class PhysicalRow : MonoBehaviour
                 placeCubeGameObject = placeCubeVariant;
             }
         }
+        spawnCube.SetMaterial(placeCubeGameObject.GetComponent<MeshRenderer>().sharedMaterial);
     }
     private void SpawnSlot(int cubeNumber)
     {
         var slot = Instantiate(rowSlotGameObject, this.transform);
         var xPos = (cubeSize * cubeNumber) + (offset * cubeNumber);
-        slot.transform.position = new Vector3(xPos,this.transform.position.y, this.transform.position.z);
+        slot.transform.localPosition = new Vector3(xPos,0, 0);
         var tempSlot = slot.GetComponent<RowSlot>();
         tempSlot.InitCube(cubeSize,rowType);
         rowSlotsActive.Add(tempSlot);
     }
 
 
+    public void SpawnCubeFromPull()
+    {
+        if (placeCubesActive.Count >= rowSlotsActive.Count) return;
+        var cubeTemp = Instantiate(placeCubeGameObject, spawnCube.transform.position,Quaternion.identity);
+        var pos = spawnCube.transform.position;
+        pos.y += 2f;
+        cubeTemp.transform.localPosition = pos;
+        
+        var placeCubeTemp = cubeTemp.GetComponent<PlaceCube>();
+        placeCubeTemp.tag = rowType.ToString();
+        placeCubesActive.Add(placeCubeTemp);
+        placeCubeTemp.zForce = this.transform.position.z;
+        placeCubeTemp.physicalRow = this;
+
+    }
+    
+    //DEPRECATED
     public void AddCubeType()
     {
         if (placeCubesActive.Count >= rowSlotsActive.Count) return;
@@ -76,17 +96,15 @@ public class PhysicalRow : MonoBehaviour
         cubeTemp.transform.position = spawnPos;
         var placeCubeTemp = cubeTemp.GetComponent<PlaceCube>();
         placeCubeTemp.tag = rowType.ToString();
-        placeCubeTemp.zForce = this.transform.position.z;
         placeCubesActive.Add(placeCubeTemp);
     }
 
-    public void DeleteCubeType()
+    public void DeleteCubeType(PlaceCube _placeCube)
     {
         if (placeCubesActive.Count <= 0) return;
         
-        var placeCubeToRemove = placeCubesActive[placeCubesActive.Count - 1];
-        placeCubesActive.Remove(placeCubeToRemove);
-        placeCubeToRemove.KillPlaceCube();
+        placeCubesActive.Remove(_placeCube);
+        _placeCube.KillPlaceCube();
 
     }
 

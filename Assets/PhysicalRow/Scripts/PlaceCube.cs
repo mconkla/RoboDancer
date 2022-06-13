@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlaceCube : XRGrabInteractable
 {
+    [HideInInspector]
+    public PhysicalRow physicalRow;
     public float size = 0.3f;
     [SerializeField]
     private Material defaultMaterial, grabbedMaterial;
@@ -15,6 +17,7 @@ public class PlaceCube : XRGrabInteractable
 
     private RowSlot _connectedRowSlot;
 
+    
     public float zForce = 0f;
     private void Awake()
     {
@@ -25,11 +28,16 @@ public class PlaceCube : XRGrabInteractable
         _allXRayInteractor = FindObjectsOfType<XRRayInteractor>();
         
         transform.localScale = new Vector3(size, size, size);
-
+        foreach (var interactor in _allXRayInteractor)
+        {
+            interactor.keepSelectedTargetValid = false;
+        }
+   
     }
     private void Update()
     {
         _meshRenderer.material = _isGrabbed ? grabbedMaterial : defaultMaterial;
+        if (!_isGrabbed) return;
         SetAttachTransforms();
     }
 
@@ -43,7 +51,9 @@ public class PlaceCube : XRGrabInteractable
 
     public void KillPlaceCube()
     {
-        _connectedRowSlot.activated = false;
+        if(_connectedRowSlot != null)
+            _connectedRowSlot.activated = false;
+        
         Destroy(this.gameObject);
     }
 
@@ -65,7 +75,10 @@ public class PlaceCube : XRGrabInteractable
     {
         base.OnSelectEntering(args);
         
-        
+        foreach (var interactor in _allXRayInteractor)
+        {
+            interactor.keepSelectedTargetValid = true;
+        }
         var pos = transform.position;
         for (var i = 0; i < _allXRayInteractor.Length; i++)
         {
@@ -104,6 +117,18 @@ public class PlaceCube : XRGrabInteractable
             }
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var floor = other.gameObject;
+        if (floor != null)
+        {
+            if (floor.CompareTag("floor"))
+            {
+                physicalRow.DeleteCubeType(this);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
