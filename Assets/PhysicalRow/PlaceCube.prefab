@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7407933941261357440}
   - component: {fileID: 7407933941261357455}
   - component: {fileID: 7407933941261357444}
+  - component: {fileID: 8621734859938020175}
   m_Layer: 0
   m_Name: PlaceCube
   m_TagString: Snare
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7407933941261357454}
   m_LocalRotation: {x: -0.000000028247927, y: 0.0009542788, z: 0.000000157925, w: 0.9999996}
   m_LocalPosition: {x: 8.16, y: 2.83, z: -1.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -213,9 +214,10 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
-  size: 0.3
+  size: 0.9
   defaultMaterial: {fileID: -3033667219593020291, guid: 831db7aa4289a1d4fb082312dfa02837, type: 3}
   grabbedMaterial: {fileID: 2100000, guid: 9fc63a7d7b5189a44b354c918f3c95a4, type: 2}
+  zForce: 0
 --- !u!54 &7407933941261357444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -232,3 +234,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!95 &8621734859938020175
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7407933941261357454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3924f9bc11aa28a47aef89c91fae1d95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
