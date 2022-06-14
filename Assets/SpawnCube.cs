@@ -5,8 +5,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SpawnCube : MonoBehaviour
 {
+    private Material _myMaterial;
     public void SetMaterial(Material _material)
     {
+        _myMaterial = _material;
         GetComponent<MeshRenderer>().material = _material;
     }
 
@@ -17,11 +19,11 @@ public class SpawnCube : MonoBehaviour
 
     public void OnHoverEntered()
     {
-        
+        _myMaterial.color = new Color(1, 0, 0);
     }
 
     public void OnHoverExited()
     {
-        
+        _myMaterial.color = new Color(1, 1, 1);
     }
 }

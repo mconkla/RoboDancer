@@ -24,7 +24,7 @@ public class PlaceCube : XRGrabInteractable
         base.Awake();
         _meshRenderer = GetComponent<MeshRenderer>();
         defaultMaterial = _meshRenderer.material;
-        
+        _meshRenderer.material.color = new Color(1, 1, 1);
         _allXRayInteractor = FindObjectsOfType<XRRayInteractor>();
         
         transform.localScale = new Vector3(size, size, size);
