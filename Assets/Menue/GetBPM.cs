@@ -13,7 +13,7 @@ public class GetBPM : MonoBehaviour
     [SerializeField] private Image fill;
     [SerializeField] private Text valText;
 
-    [SerializeField] private int maxAngle = 70;
+    [SerializeField] private int maxAngle;
 
     private int _angleRound = 0;
 
@@ -27,12 +27,13 @@ public class GetBPM : MonoBehaviour
         angle = this.transform.rotation.z * Mathf.Rad2Deg - 39 ;
         
         angle = angle < 0 ? angle * -1 : angle;
+        
         _angleRound = (int)angle;
         
-        fill.fillAmount = ((float)_angleRound/ maxAngle) + 0.014f;
-        valText.text = (_angleRound + _startValue).ToString(CultureInfo.InvariantCulture);
-        Metronome.instance.bpm = _angleRound + _startValue;
-        Metronome.instance.bpmDisplay.text = (_angleRound + _startValue).ToString();
+        fill.fillAmount = ((_angleRound/ 0.4f)/ maxAngle) + 0.014f;
+        valText.text = ((int)(_angleRound/ 0.4f ) + _startValue).ToString(CultureInfo.InvariantCulture);
+        Metronome.instance.bpm = (int)(_angleRound/ 0.4f )+ _startValue;
+        Metronome.instance.bpmDisplay.text = ((int)(_angleRound/ 0.4f )+ _startValue).ToString();
     }
 
     private void Exit()
