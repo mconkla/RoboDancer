@@ -36,9 +36,13 @@ public class PlaceCube : XRGrabInteractable
     }
     private void Update()
     {
-        _meshRenderer.material = _isGrabbed ? grabbedMaterial : defaultMaterial;
+        CheckIfGrabbed();
         if (!_isGrabbed) return;
         SetAttachTransforms();
+    }
+    
+    private void CheckIfGrabbed(){
+        defaultMaterial.color = _isGrabbed ? Color.green : Color.white;
     }
 
     public void SnapPosition(RowSlot rowSlot)
