@@ -99,6 +99,16 @@ public class PhysicalRow : MonoBehaviour
         placeCubesActive.Add(placeCubeTemp);
     }
 
+    public void DeleteAllActiveCubes()
+    {
+        for (var i = placeCubesActive.Count -1; i >= 0; i--)
+        {
+            var placeCube = placeCubesActive[i];
+            placeCubesActive.Remove(placeCubesActive[i]);
+            placeCube.KillPlaceCube();
+        }
+    }
+
     public void DeleteCubeType(PlaceCube _placeCube)
     {
         if (placeCubesActive.Count <= 0) return;
