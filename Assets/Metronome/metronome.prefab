@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 4823093945477609575}
   - component: {fileID: 4823093945477609592}
   m_Layer: 0
-  m_Name: metronome
+  m_Name: Metronome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

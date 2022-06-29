@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44893557, g: 0.4954878, b: 0.55682033, a: 1}
+  m_IndirectSpecularColor: {r: 0.44893503, g: 0.49548697, b: 0.5568195, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5576,85 +5576,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &889529984
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 889529985}
-  - component: {fileID: 889529987}
-  - component: {fileID: 889529986}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &889529985
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889529984}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0039039846, w: 0.9999924}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.019386541, y: 0.019386541, z: 0.019386537}
-  m_Children: []
-  m_Father: {fileID: 564803714}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -141.864}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.12, y: -6.23}
-  m_SizeDelta: {x: 160, y: 67.671}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &889529986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889529984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.95947546, b: 0.95947546, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 0
-    m_MaxSize: 63
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 0
---- !u!222 &889529987
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889529984}
-  m_CullTransparentMesh: 1
 --- !u!1 &904749785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5992525481848642952, guid: f1d8087d8b1e12245a327e69d85a9b9e, type: 3}
@@ -7568,7 +7489,7 @@ RectTransform:
   m_Children:
   - {fileID: 1634983573}
   m_Father: {fileID: 564803714}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -141.428}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9079,7 +9000,7 @@ MonoBehaviour:
   angle: 0
   rotation: 0
   fill: {fileID: 1634983574}
-  valText: {fileID: 889529986}
+  valText: {fileID: 0}
   maxAngle: 200
 --- !u!114 &1547256736
 MonoBehaviour:
@@ -10540,7 +10461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4823093945477609593, guid: e78e02ca9d727419bbdad083ac6e94e2, type: 3}
       propertyPath: m_Name
-      value: metronome
+      value: Metronome
       objectReference: {fileID: 0}
     - target: {fileID: 4823093945627242644, guid: e78e02ca9d727419bbdad083ac6e94e2, type: 3}
       propertyPath: m_Pivot.x
@@ -10830,7 +10751,7 @@ GameObject:
   - component: {fileID: 1753486156}
   - component: {fileID: 1753486155}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: CylinderBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10848,7 +10769,7 @@ RectTransform:
   m_LocalScale: {x: 5.603248, y: 0.6303654, z: 5.603248}
   m_Children: []
   m_Father: {fileID: 564803714}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 230.621, y: -90, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14218,7 +14139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1595512881570946531}
   m_Layer: 0
-  m_Name: _Level
+  m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15210,7 +15131,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8928752220657234994, guid: 3c079cce942c3c34e9fbf3e9371ca655, type: 3}
       propertyPath: m_Name
-      value: Menue
+      value: BPM
       objectReference: {fileID: 0}
     - target: {fileID: 8928752220657234994, guid: 3c079cce942c3c34e9fbf3e9371ca655, type: 3}
       propertyPath: m_IsActive
